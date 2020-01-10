@@ -1,0 +1,8 @@
+# Latex stuff
+presentation/*.aux
+presentation/*.log
+presentation/*.nav
+presentation/*.out
+presentation/*.toc
+presentation/*.snm
+presentation/*.synctex.gz
