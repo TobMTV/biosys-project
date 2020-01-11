@@ -16,7 +16,7 @@ ufw allow proto tcp \
        	ufw enable
 
 # Obtain SSL
-echo "2\\ncasalinovalerio.cv@gmail.com\\nA\\nN\\n$NODE.casalinovalerio.com" |\
+printf "2\\ncasalinovalerio.cv@gmail.com\\nA\\nN\\n%s.casalinovalerio.com" "$NODE" |\
 	certbot certonly
 
 # Configure and reload nginx
