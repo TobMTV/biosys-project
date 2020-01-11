@@ -3,8 +3,8 @@
 ## Members
 
 - Shaahin (@)
-- Tobi (@)
-- Valerio (@)
+- Tobi (@TobMTV)
+- Valerio (@casalinovalerio)
 
 ## TODOs
 
