@@ -1,5 +1,7 @@
 # Biometric Systems Project
 
+[![CodeFactor](https://www.codefactor.io/repository/github/casalinovalerio/biosys-project/badge)](https://www.codefactor.io/repository/github/casalinovalerio/biosys-project)
+
 ## Members
 
 - Shaahin (@)
