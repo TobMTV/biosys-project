@@ -22,7 +22,7 @@ HERETO
 
 # Deploy our docker server on your own. It is meant to be a testing deployment. 
 # Assuming you're on Ubuntu server 18.04 LTS.
-install-db()
+install_db()
 {
   # Testing the environment
   command -v docker > /dev/null || error "You need Docker to preceed."
@@ -49,7 +49,7 @@ install-db()
 # supply a path in which you want to work on the website and/or a path in which 
 # you want to work on the presentation. The website is plain html+css+js and 
 # the presentation is LateX beamer. Have fun.
-install-pc()
+install_pc()
 {
   while getopts "w:t:" opt; do
     case $opt in
@@ -83,11 +83,11 @@ done
 
 case "$1" in
   db|database) 
-    install-db
+    install_db
     ;;
   pc|computer)
     shift
-    install-pc $@
+    install_pc $@
     ;;
   api|server)
     # TODO: when it is ready implement this
