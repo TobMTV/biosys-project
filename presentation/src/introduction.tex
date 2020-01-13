@@ -1,0 +1,24 @@
+\begin{frame} \frametitle{Overview}
+We wanted a face recognition based authentication application that is simple, 
+yet particular. We deployed our test using:
+
+\begin{itemize}
+	\item A \textbf{web interface}\footnote{Hosted by Github Pages: 
+	{\color{red}\url{https://pages.github.com/}}} that works as a 
+	demonstrative placeholder. It gets the face with the camera, makes 
+	requests to our API server, which returns only a binary value for the 
+	success of the authentication.
+	
+	\item An \textbf{API server}\footnote{Hosted by Digital Ocean: 
+	{\color{red} \url{https://www.digitalocean.com/}}} that queries the 
+	faces database and recognizes faces using the \textbf{OpenBR's 
+	tool}\footnote{OpenBR tool here: {\color{red} 
+	\url{http://openbiometrics.org/}}}.
+	
+	\item A \textbf{database based on Blockchain}\footnote{Implemented by 
+	Bigchaindb: {\color{red} \url{https://www.bigchaindb.com/}}} that is an
+	open source wrapper for a blockchain database that can be queried with 
+	standard SQL syntax.
+\end{itemize}
+
+\end{frame}
