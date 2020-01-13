@@ -2,6 +2,7 @@
 
 [![CodeFactor](https://www.codefactor.io/repository/github/casalinovalerio/biosys-project/badge)](https://www.codefactor.io/repository/github/casalinovalerio/biosys-project)
 ![GitHub](https://img.shields.io/github/license/casalinovalerio/biosys-project)
+![GitHub deployments](https://img.shields.io/github/deployments/casalinovalerio/biosys-project/github-pages?label=gh-pages)
 
 ## Members
 
@@ -44,7 +45,7 @@ On your pc:
 
 ## TODOs
 
-- [ ] Put the (web: html + css + js) login interface in `docs` folder.
+- [x] Put the (web: html + css + js) login interface in `docs` folder.
 - [x] Put Docker files to replicate the configuration in `database` folder.
 - [ ] Put the presentation in `presentation` folder.
 - [ ] Put php files for api server in `api` folder.
