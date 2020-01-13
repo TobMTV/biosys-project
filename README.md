@@ -22,21 +22,21 @@ On db-server:
 
 ```bash
 # You'll need Docker installed
-./install-db.sh
+./install.sh db
 ```
 
 On api-server:
 
 ```bash
 # Default is /var/www/html
-./install-api.sh -d /path/to/webroot
+./install.sh api -d /path/to/webroot
 ```
 
 On your pc:
 
 ```bash
 # Both args are optional, if no arg is supplied it will print the usage
-./install-pc.sh -w /path/to/web-devel-folder -t /path/to/presentation/folder
+./install.sh pc -w /path/to/web-devel-folder -t /path/to/presentation/folder
 ```
 
 ## TODOs
