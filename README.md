@@ -4,9 +4,9 @@
 
 ## Members
 
-- Shaahin (@)
-- Tobi (@TobMTV)
-- Valerio (@casalinovalerio)
+- Shaahin ([@shaahin-sabeti](https://github.com/shaahin-sabeti))
+- Tobi ([@TobMTV](https://github.com/TobMTV))
+- Valerio ([@casalinovalerio](https://github.com/casalinovalerio))
 
 ## Introduction
 
