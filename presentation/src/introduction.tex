@@ -3,6 +3,7 @@ We wanted a face recognition based authentication application that is simple,
 yet particular. We deployed our test using:
 
 \begin{itemize}
+
 	\item A \textbf{web interface}\footnote{Hosted by Github Pages: 
 	{\color{red}\url{https://pages.github.com/}}} that works as a 
 	demonstrative placeholder. It gets the face with the camera, makes 
@@ -19,6 +20,34 @@ yet particular. We deployed our test using:
 	Bigchaindb: {\color{red} \url{https://www.bigchaindb.com/}}} that is an
 	open source wrapper for a blockchain database that can be queried with 
 	standard SQL syntax.
+	
 \end{itemize}
+\end{frame}
 
+\begin{frame} \frametitle{Overview scheme\footnote{Icons are licensed under 
+	CC-BY 4.0. {\color{red} \url{https://fontawesome.com/license}}}}
+
+	\begin{center} \begin{tikzpicture}
+	
+	\node[inner sep=0pt, label={above:casalinovalerio.com/biosys-project}] 
+	(client) at (0,4) 
+	{\includegraphics[width=.11\textwidth]{img/laptop}};
+	
+	\node[inner sep=0pt, label={below:api-server.com}]
+	(server) at (0,0) 
+	{\includegraphics[width=.11\textwidth]{img/server}};
+	
+	\node[inner sep=0pt, label={below:node1.casalinovalerio.com}]
+	(database) at (4,0)
+	{\includegraphics[width=.09\textwidth]{img/database}};
+	
+	\draw[thick, ->] (client.south) -- node[anchor=west] {Request for auth}
+	(server.north);
+	\draw[thick, <->] (server.east) -- node[anchor=north] {query db} 
+	(database.west);
+	\draw[thick, ->] (server.west) .. controls (-2.5,2.5) .. 
+	node[anchor=east] {Response} (client.west);
+	
+	\end{tikzpicture} \end{center}
+	
 \end{frame}
