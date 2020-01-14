@@ -24,76 +24,88 @@
 	\vfill
 \end{frame}
 	
-\begin{frame} \frametitle{Architecture Implementation}
-	\centering \textbf{!!This is absolutely not meant for a real deployment!!}
-	\begin{center} \scalebox{0.5}{ \begin{tikzpicture}[
+\begin{frame} \frametitle{Architecture Implementation\footnote{This is absolutely not meant for a real deployment!!}}
+	\begin{center} \begin{tikzpicture}[
 		container/.style={rectangle, draw=black, fill=cyan!5 ,very thick, 
-		minimum size=7.5em, align=center},
-		ports/.style={draw=black, very thick, rectangle, rounded corners=2ex,
-		minimum height=0.5in, minimum width=3in,align=center, rotate=90}
+		minimum size=0.3in, align=center},
+		ports/.style={draw=black, thick, rectangle, rounded corners=1.5ex,
+		minimum height=0.2in, minimum width=1.5in,align=center, rotate=90}
 	]
 		
 		% Bigchaindb dockers
-		\node[container, label={above:node1.casalinovalerio.com}] 
-		(1) at (2,7) {Container: \\ \color{blue} Bigchain DB\#1};
-		\node[container, label={above:node2.casalinovalerio.com}] 
-		(2) at (7,7) {Container: \\ \color{blue} Bigchain DB\#2};
-		\node[container, label={below:node3.casalinovalerio.com}] 
-		(3) at (2,2) {Container: \\ \color{blue} Bigchain DB\#3};
-		\node[container, label={below:node4.casalinovalerio.com}] 
-		(4) at (7,2) {Container: \\ \color{blue} Bigchain DB\#4};
+		\node[container, label={above:\footnotesize node1.com}] 
+		(1) at (1,3.5) 
+		{\scriptsize Container: \\ \scriptsize \color{blue} Bigchain DB\#1};
+		\node[container, label={above:\footnotesize node2.com}] 
+		(2) at (3.5,3.5) 
+		{\scriptsize Container: \\ \scriptsize \color{blue} Bigchain DB\#2};
+		\node[container, label={below:\footnotesize node3.com}] 
+		(3) at (1,1) 
+		{\scriptsize Container: \\ \scriptsize \color{blue} Bigchain DB\#3};
+		\node[container, label={below:\footnotesize node4.com}] 
+		(4) at (3.5,1) 
+		{\scriptsize Container: \\ \scriptsize \color{blue} Bigchain DB\#4};
 		
 		% Nginx container
 		\node[container] 
-		(5) at (10.5,4.5) {Container: \\ \color{red} Nginx};
+		(5) at (4.8,2.25) {\scriptsize Container: \\ \scriptsize \color{red} Nginx};
 			
 		% Ports
-		\node[ports] (6) at (14,4.5) {Docker Ports};
-		\node[ports] (7) at (18,4.5) {Server Ports};
+		\node[ports] (6) at (6.5,2.25) {\scriptsize Docker Ports};
+		\node[ports] (7) at (8.5,2.25) {\scriptsize Server Ports};
 			
 		% Outline Boxes	
 		\node(n1)[draw, blue, very thick, fit=(1)(2)(3)(4)(5)(6), 
-		inner sep=2em, label={above:DOCKER SETUP}]{};
+		inner sep=0.15in, label={above:\footnotesize DOCKER SETUP}]{};
 		\node(n2)[draw, brown, very thick, fit=(n1)(7),
-		inner sep=2em,label={above:PHISICAL SERVER}]{};
+		inner sep=0.2in,label={above:\footnotesize PHISICAL SERVER}]{};
 			
 		% Containers to Nginx	
-		\draw[<->] (1.south) .. controls + (down:1em) .. ([yshift=0.5em]5.west);
-		\draw[<->] (2.south) .. controls + (down:0.7em) .. ([yshift=1.5em]5.west);
-		\draw[<->] (3.north) .. controls + (up:1em) .. ([yshift=-0.5em]5.west);
-		\draw[<->] (4.north) .. controls + (up:0.7em) .. ([yshift=-1.5em]5.west);
+		\draw[<->] (1.south) .. controls + (down:0.5em) .. ([yshift=0.25em]5.west);
+		\draw[<->] (2.south) .. controls + (down:0.35em) .. ([yshift=0.75em]5.west);
+		\draw[<->] (3.north) .. controls + (up:0.5em) .. ([yshift=-0.25em]5.west);
+		\draw[<->] (4.north) .. controls + (up:0.35em) .. ([yshift=-0.75em]5.west);
 	
 		% Nginx to docker ports			
-		\draw[line width=0.4em,<->,blue!30] (5.east) -- (6.north);
+		\draw[very thick,<->,blue!30] (5.east) -- (6.north);
 				
 		% docker ports to server ports	
-		\draw[ultra thick, red, <->] ([yshift=1.2in]6.south) -- 
-		node[above]{\parbox[t]{2em}{22:22}} ([yshift=1.2in]7.north);
+		\draw[thick, red, <->] ([yshift=0.6in]6.south) -- 
+		node[above]{\parbox[t]{2em}
+		{\centering \tiny 22:22}} ([yshift=0.6in]7.north);
 			
-		\draw[ultra thick, red, <->] ([yshift=0.9in]6.south) -- 
-		node[above]{\parbox[t]{2em}{80:80}} ([yshift=0.9in]7.north);
+		\draw[thick, red, <->] ([yshift=0.45in]6.south) -- 
+		node[above]{\parbox[t]{2em}
+		{\centering \tiny 80:80}} ([yshift=0.45in]7.north);
 		
-		\draw[ultra thick, red, <->] ([yshift=0.6in]6.south) -- 
-		node[above]{\parbox[t]{3em}{443:443}} ([yshift=0.6in]7.north);
+		\draw[thick, red, <->] ([yshift=0.3in]6.south) -- 
+		node[above]{\parbox[t]{3em}
+		{\centering \tiny 443:443}} ([yshift=0.3in]7.north);
 			
-		\draw[ultra thick, red, <->] ([yshift=0.3in]6.south) -- 
-		node[above]{\parbox[t]{4em}{9984:9984}} ([yshift=0.3in]7.north);
+		\draw[thick, red, <->] ([yshift=0.15in]6.south) -- 
+		node[above]{\parbox[t]{4em}
+		{\centering \tiny 9984:9984}} ([yshift=0.15in]7.north);
 	
-		\draw[ultra thick, red, <->] (6.south) -- 
-		node[above]{\parbox[t]{4em}{9985:9985}} (7.north);
+		\draw[thick, red, <->] (6.south) -- 
+		node[above]{\parbox[t]{4em}
+		{\centering \tiny 9985:9985}} (7.north);
 				
-		\draw[ultra thick, red, <->] ([yshift=-0.3in]6.south) -- 
-		node[above]{\parbox[t]{4em}{2812:2812}} ([yshift=-0.3in]7.north);
+		\draw[thick, red, <->] ([yshift=-0.15in]6.south) -- 
+		node[above]{\parbox[t]{4em}
+		{\centering \tiny 2812:2812}} ([yshift=-0.15in]7.north);
 				
-		\draw[ultra thick, red, <->] ([yshift=-0.6in]6.south) -- 
-		node[above]{\parbox[t]{5em}{26656:26656}} ([yshift=-0.6in]7.north);
+		\draw[thick, red, <->] ([yshift=-0.3in]6.south) -- 
+		node[above]{\parbox[t]{5em}
+		{\centering \tiny 26656:26656}} ([yshift=-0.3in]7.north);
 				
-		\draw[ultra thick, red, <->] ([yshift=-0.9in]6.south) -- 
-		node[above]{\parbox[t]{5em}{26657:26657}} ([yshift=-0.9in]7.north);
+		\draw[thick, red, <->] ([yshift=-0.45in]6.south) -- 
+		node[above]{\parbox[t]{5em}
+		{\centering \tiny 26657:26657}} ([yshift=-0.45in]7.north);
 			
-		\draw[ultra thick, red, <->] ([yshift=-1.2in]6.south) -- 
-		node[above]{\parbox[t]{5em}{27017:27017}} ([yshift=-1.2in]7.north);
-	\end{tikzpicture} }\end{center}
+		\draw[thick, red, <->] ([yshift=-0.6in]6.south) -- 
+		node[above]{\parbox[t]{5em}
+		{\centering \tiny 27017:27017}} ([yshift=-0.6in]7.north);
+	\end{tikzpicture} \end{center}
 \end{frame}
 		
 \begin{frame} \frametitle{How to interact with the DB}
