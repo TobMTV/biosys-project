@@ -1,4 +1,4 @@
-let videoWidth, videoHeight;
+  let videoWidth, videoHeight;
 
 // whether streaming video from the camera.
 let streaming = false;
