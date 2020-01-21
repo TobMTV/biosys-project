@@ -48,10 +48,14 @@
             <canvas class="center-block" id="canvasOutput" width=320 height=240></canvas>
           </div>
           <div class="text-center">
-            <input type="checkbox" id="face" name="classifier" value="face" checked>
-            <label for="face">face</label>
-            <input type="checkbox" id="eye" name="cascade" value="eye">
-            <label for="eye">eye</label>
+			  <div class="form-check form-check-inline">
+                <input class="form-check-input form-check-inline" type="radio" id="face" name="classifier" value="face" checked>
+                <label class="form-check-label" for="face">face</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input form-check-inline" type="radio" id="eye" name="classifier" value="eye">
+                <label class="form-check-label" for="eye">eye</label>
+              </div>
           </div>
         <div class="invisible">
           <video id="video" class="hidden">Your browser does not support the video tag.</video>
