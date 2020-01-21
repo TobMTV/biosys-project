@@ -1,8 +1,0 @@
-# Latex stuff
-**/*.aux
-**/*.log
-**/*.nav
-**/*.out
-**/*.toc
-**/*.snm
-**/*.synctex.gz
