@@ -21,6 +21,8 @@
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/casalinovalerio/biosys-project@js-includes/srv-interact.js"></script>
   
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
@@ -55,6 +57,10 @@
               <div class="form-check form-check-inline">
                 <input class="form-check-input form-check-inline" type="radio" id="eye" name="classifier" value="eye">
                 <label class="form-check-label" for="eye">eye</label>
+              </div>
+              <div class="container">
+				        <button type="button" class="btn btn-primary" id="send-face" onclick="sendFace()">Send Face</button>
+                <button type="button" class="btn btn-primary" id="reco-face">Recognize Face</button>
               </div>
           </div>
         <div class="invisible">
