@@ -4,6 +4,14 @@ function sendFace() {
 
     picture.id = "pic";
     picture.src = canvas.toDataURL();
-    
-    console.log(picture.src);	
+
+    // Placeholder
+    var login = document.getElementById("login");
+    var id = login.textContent;
+
+    xhr = new XMLHttpRequest();
+    xhr.open('POST', 'biosys.casalinovalerio.com/send-faces.php', true);
+    xhr.send("image=" + picture.src + "&id=" + id );
+
+    alert(xhr.response);
 }
