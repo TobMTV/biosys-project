@@ -10,7 +10,7 @@ function sendFace() {
     var id = login.value;
 
     xhr = new XMLHttpRequest();
-    xhr.open('POST', 'biosys.casalinovalerio.com/send-faces.php', true);
+    xhr.open('POST', 'https://biosys.casalinovalerio.com/send-faces.php', true);
     xhr.send("image=" + picture.src + "&id=" + id );
 
     alert(xhr.response);
