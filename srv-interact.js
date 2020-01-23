@@ -7,7 +7,7 @@ function sendFace() {
 
     // Placeholder
     var login = document.getElementById("login");
-    var id = login.textContent;
+    var id = login.value;
 
     xhr = new XMLHttpRequest();
     xhr.open('POST', 'biosys.casalinovalerio.com/send-faces.php', true);
