@@ -1,7 +1,28 @@
 \begin{frame} \frametitle{Connecting the Web app to API server}
-
-	This is how we did it:
-
+	
+	\vfill
+	\begin{block} {Send faces function in web app}
+		\texttt{
+			...\\
+	  		var canvas = document.getElementById("canvasOutput");\\
+    	  		picture.src = canvas.toDataURL();\\
+			...\\
+	  		xhr.open('POST', 'url/send-faces.php', true);\\
+			...
+		}
+	\end{block}
+	\vfill
+	\begin{block} {Recognize face function in web app}
+		\texttt{
+			...\\
+			var canvas = document.getElementById("canvasOutput");\\
+		    picture.src = canvas.toDataURL();\\
+		    ...\\
+		    xhr.open('POST', 'url/reco-faces.php', true);\\
+		    ...		
+		}
+	\end{block}
+	\vfill
 \end{frame}
 
 \begin{frame} \frametitle{Connecting the API to the DB}

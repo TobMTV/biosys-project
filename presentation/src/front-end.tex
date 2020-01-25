@@ -1,6 +1,22 @@
 \begin{frame} \frametitle{The web Application}
 
-	Some words on how it is done. opencv, javascript etc...
+	The web application perform the authentication as follows:
+	
+	\vfill
+
+	\begin{itemize}
+	 	\item Captures frames in a canvas.
+	 	\item Analyzes them through the opencv's javascript\footnote{{ \color{red}
+	 	\url{https://tinyurl.com/s2yprk7}}}.
+	 	\item As the time one button is pressed, the canvas frame is sent to our
+	 	server\footnote{{ \color{red} \url{https://biosys.casalinovalerio.com}}},
+	 	which can register the face, or match the face with an already registered
+	 	user.
+	 	\item In the end, you can be registered, or you can get the authentication
+	 	response status.
+	\end{itemize}
+	 
+	\vfill
 
 \end{frame}
 
