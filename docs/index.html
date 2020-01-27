@@ -84,11 +84,20 @@
       var id = login.value;
 
       // Actual request
-      xhr = new XMLHttpRequest();
-      xhr.open('POST', 'https://biosys.casalinovalerio.com/send-faces.php', true);
-      xhr.send("image=" + picture.src + "&id=" + id );
 
-      alert(xhr.response);
+      $.ajax({
+        type: 'POST',
+        url: 'https://biosys.casalinovalerio.com/send-faces.php',
+        crossDomain: true,
+        data: 'image=' + picture.src + "&id=" + id,
+        contentType: 'text; charset=utf-8',
+        success: function(responseData, textStatus, jqXHR) {
+          alert(responseData);
+        },
+        error: function(responseData, textStatus, errorThrown) {
+          alert("POST failed with status: " + textStatus );
+        }
+      })
   }
 
   function recoFace() {
