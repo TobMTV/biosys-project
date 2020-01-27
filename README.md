@@ -16,10 +16,10 @@ This student group project is assigned for the [Biometric Systems course](https:
 
 We decided to use the following tools and software:
 
-* [OpenBR](http://openbiometrics.org) as authentication software.
-* [Bigchaindb](https://bigchaindb.com) as Blockchain database.
-* [Ubuntu Server 18.04 LTS](https://ubuntu.com/download/server) as OS to deploy our API server.
-* [Digital Ocean](https://www.digitalocean.com/) as platform to rent our VPS (Virtual Private Server).
+* [@ageitgey/face_recognition](https://github.com/ageitgey/face_recognition) Python API running in a Docker.
+* [Bigchaindb](https://bigchaindb.com) as Blockchain database running in a Docker.
+* [Ubuntu Server 18.04 LTS](https://ubuntu.com/download/server) as OS to deploy our API server running on a VPS.
+* [Digital Ocean](https://www.digitalocean.com/) as platform to rent our VPS.
 * [Github Pages](https://pages.github.com) as web interface to demonstrate our method.
 * [LaTex](https://www.latex-project.org/) to write our presentation.
 
@@ -52,6 +52,16 @@ On your pc:
 ./install.sh pc -w /path/to/web-devel-folder -t /path/to/presentation/folder
 ```
 
+## Get the presentation
+
+```bash
+git clone "https://github.com/casalinovalerio/biosys-project.git" \
+	&& cd biosys-project \
+	&& ./get-presentation.sh
+```
+
+Your presentation is in the same folder as `bs-presentation.pdf`.
+
 ## TODOs
 
 - [x] Put the (web: html + css + js) login interface in `docs` folder.
@@ -59,5 +69,5 @@ On your pc:
 - [x] Put the presentation in `presentation` folder.
 - [ ] Put php files for api server in `api` folder.
 - [ ] Write scripts to reproduce our exact same setup.
-- [ ] Update the README.
-- [ ] Divide the work between members.
+- [x] Update the README.
+- [x] Divide the work between members.
