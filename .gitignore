@@ -6,3 +6,6 @@
 **/*.toc
 **/*.snm
 **/*.synctex.gz
+
+# Presentation output
+/*.pdf
