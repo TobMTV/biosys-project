@@ -62,8 +62,7 @@ install_pc()
 	WEB="$OPTARG"
 	;;
       *)
-	printf "Usage: %s pc|computer -w <web-dir> -t <pres-dir>\\n"	\
-	  "$SCRIPT_NAME"
+	usage
 	exit 0
 	;;
     esac
