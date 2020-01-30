@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# args:
+#     1: url getty images: https://www.gettyimages.it/editorial-images
+#     2: name or id of the (public) person
+mkdir "$2"
+./scrape "$1" "urls/${2}-images"
+./download "urls/${2}-images" "$2"

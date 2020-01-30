@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+
+# args:
+#      1: file with links
+#      2: ouput dir
+wget --progress='bar' -i "$1" -P "./$2" 
