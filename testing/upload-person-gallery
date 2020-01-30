@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+# One person at a time please
+# args:
+#     1: parent folder in which the script will look for images
+#     2: domain url (or ip address) of the server on which the images will be processed
+#     3: id chosen for that person
+
+images=$( find "$1" -name '*' -exec file {} \; | grep -o -P '^.+: \w+ image' | cut -d':' -f1 )
+
+printf "\e[1;32mURL: %s/faces?id=%s\e[m\\nPress enter to proceed" "$2" "$3"
+read -r lol; printf "\\n"
+
+
+for img in $images; do
+  printf "\e[1;31mUploading: %s\e[m\\n" "$img"
+  curl -s -X POST -F "file=@$img" "$2/faces?id=$3"
+done
