@@ -6,3 +6,7 @@
 mkdir "$2"
 ./scrape "$1" "urls/${2}-images"
 ./download "urls/${2}-images" "$2"
+
+for img in $2/*; do
+	mv "$img" "${img}.jpg"
+done
