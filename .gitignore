@@ -9,3 +9,6 @@
 
 # Presentation output
 /*.pdf
+
+# Ignore "gitignore" folders
+**/gitignore/*
