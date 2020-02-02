@@ -18,4 +18,9 @@ Do this as many time as you want, but be sure to choose always the same folder f
 
 ## Get probes
 
-As probes, we got 10 random pictures of every person in the gallery, plus some more people, by using the scrape-and-download script.
+As probes, we got 10 random pictures of every person in the gallery, plus some more people, by using:
+
+```bash
+/testing/get-probes <url> <probes-file>
+```
+

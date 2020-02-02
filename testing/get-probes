@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# args:
+#     1: link to img page: https://www.gettyimages.it/editorial-images
+#     2: output file (cumulative)
+
+curl -s "$1" \
+	| grep -o -P "https:\/\/media.gettyimages.com\/photos\/[a-zA-z-0-9=&;]{2,}" \
+	| sort \
+	| uniq \
+	| shuf \
+	| head >> "$2"
