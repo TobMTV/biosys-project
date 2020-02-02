@@ -3,10 +3,11 @@
 # args:
 #     1: url getty images: https://www.gettyimages.it/editorial-images
 #     2: name or id of the (public) person
+#     3: folder to store images
 mkdir "$2"
-./scrape "$1" "urls/${2}-images"
-./download "urls/${2}-images" "$2"
+./scrape "$1" "${3}/${2}-images"
+./download "${3}/${2}-images" "$3/$2"
 
-for img in $2/*; do
+for img in $3/$2/*; do
 	mv "$img" "${img}.jpg"
 done
