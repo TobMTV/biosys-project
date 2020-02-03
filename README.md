@@ -61,13 +61,3 @@ git clone "https://github.com/casalinovalerio/biosys-project.git" \
 ```
 
 Your presentation is in the same folder as `bs-presentation.pdf`.
-
-## TODOs
-
-- [x] Put the (web: html + css + js) login interface in `docs` folder.
-- [x] Put Docker files to replicate the configuration in `database` folder.
-- [x] Put the presentation in `presentation` folder.
-- [ ] Put php files for api server in `api` folder.
-- [ ] Write scripts to reproduce our exact same setup.
-- [x] Update the README.
-- [x] Divide the work between members.
