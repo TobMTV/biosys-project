@@ -7,13 +7,21 @@ import matplotlib.pyplot as plt
 # Registered users in gallery
 gallery_ids = ['bill','doubleb','tommy','harley','mlion','redlucy','robman','zuck']
 
+IMPOSTORS=0.0
+with open('./results.csv', 'r') as res:
+    reader = csv.DictReader(res)
+    for row in reader:
+        if row['Real name'] not in gallery_ids:
+            IMPOSTORS=IMPOSTORS+1.0
 
+res.close()
 
 FAR=[] # False acceptance rate
 FRR=[] # False rejection rate
 THS=[] # Thresholds
 
 threshold = 0.00
+MAX_FAR=-1
 
 with open('./results.csv', 'r') as resultscsv:
     while int(threshold) < 1:
@@ -56,27 +64,24 @@ with open('./results.csv', 'r') as resultscsv:
                 else:
                     # Real name not in gallery and no match, so genuine rejection
                     GR=GR+1.0
-        
-        print(FA,FR,GA,GR,threshold)
-        if (FR+GA) != 0: 
-            FRR.append( FR/(FR+GA) )
-        else:
-            FRR.append( 1 )
+            if (FR+GR) > MAX_FAR: 
+                MAX_FAR=(FR+GR)
 
-        if (FA+GA) != 0:
-            FAR.append( FA/(FA+GA) )
-        else:
-            FAR.append( 1 )
+        
+        print(FA,FR,GA,GR,threshold,IMPOSTORS)
+        
+        FRR.append( GA/60 )
+        FAR.append( ((FR+GR)/IMPOSTORS-1)/MAX_FAR )
 
         THS.append( threshold )
-        threshold = threshold + 0.01
+        threshold = threshold + 0.001
 
 plt.plot( THS, FAR, "g" )
 plt.plot( THS, FRR, "r" )
 
 plt.tick_params(axis='both',bottom=True, top=True, left=True, right=True, direction='in', which='major', grid_color='blue')
 plt.grid(linestyle='--', linewidth=0.5, alpha=0.15)
-plt.title("FAR (green) & FRR (red)\nGraphic representation of the system with threshold step of 0.01")
+plt.title("FAR (green) & FRR (red)\nGraphic representation of the system with threshold step of 0.001")
 
 plt.show()
 
