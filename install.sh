@@ -70,13 +70,25 @@ done
 
 [ -n "$WEB" ] && { 
   printf "Copying web folder to %s...\\n" "$WEB"
-  cp -r ./docs/* "$WEB" || error "Error copying web files"; }
+  cp -r ./website/* "$WEB" || error "Error copying web files"; }
 
 [ -n "$TEX" ] && {
   printf "Copying presentation folder to %s...\\n" "$TEX"    
   cp -r ./presentation/* "$TEX" || error "Error copying tex files"; }
 
 }
+
+install_srv()
+{
+  if [ -n "$1" ]; then
+    WEB_PATH="$1" 
+  else 
+    WEB_PATH="/var/www/html"
+  fi
+
+  [ ! -d "$WEB_PATH" ] && error "No web path found"
+  cp -r ./api/* "$WEB_PATH" || error "Error copying files"
+} 
 
 [ "$#" -eq 0 ] && { usage; exit 0; }
 
@@ -89,7 +101,8 @@ case "$1" in
     install_pc $@
     ;;
   api|server)
-    # TODO: when it is ready implement this
+    shift
+    install_srv $@
     exit 0
     ;;
   *)
