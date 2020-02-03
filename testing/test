@@ -5,17 +5,16 @@
 #     2: server url
 #     3: csv file
 
-printf "Distance,Id,Image\\n" > "$3"
+command -v jq > /dev/null || { printf "Install jq please"; exit 1; }
 
+printf "Distance,Id,Image\\n" > "$3"
 for img in $1/*; do
-  response=$( curl -s -X POST -F "file=@$img" "$2" \
-	  | tr ',' '\n' \
-	  | sed "s/{//g;s/}//g;s/\[//g;s/\]//g;s/faces://g" \
-  )
-  flag=0
-  printf "%s" "$response" | grep "count: 1" > /dev/null 2&>1 || flag=1
-  [ "$flag" -eq 0 ] && {
-    printf "%s" "$response" | tail -n +2 | cut -d ":" -f 2 | tr '\n' ',' >> "$3"
-    printf "%s\\n" "$img" >> "$3";
-  }
+  response=$( curl -s -X POST -F "file=@$img" "$2" )
+  count=$( printf "%s" "$response" | jq '.count' )
+  if [ "$count" -eq 1 ]; then
+    dist=$( printf "%s" "$response" | jq '.faces[0].dist' )
+    id=$( printf "%s" "$response" | jq '.faces[0].id' )
+    image=$( printf "%s" "$img" | rev | cut -d "/" -f 1 | rev )
+    printf "%s,%s,%s\\n" "$dist" "$id" "$image" >> "$3"
+  fi
 done
