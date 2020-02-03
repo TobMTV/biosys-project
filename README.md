@@ -42,7 +42,7 @@ On api-server:
 
 ```bash
 # Default is /var/www/html
-./install.sh api -d /path/to/webroot
+./install.sh api /path/to/webroot
 ```
 
 On your pc:
