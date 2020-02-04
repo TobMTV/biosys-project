@@ -1,7 +1,7 @@
 FROM python:3.4-slim
 
-RUN apt-get -y --no-install-recommends update && \
-    apt-get install -y --fix-missing \
+RUN apt-get -y update && \
+    apt-get install -y --fix-missing --no-install-recommends  \
     build-essential \
     cmake \
     gfortran \
