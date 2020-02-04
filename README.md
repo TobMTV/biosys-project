@@ -60,4 +60,4 @@ git clone "https://github.com/casalinovalerio/biosys-project.git" \
 	&& ./get-presentation.sh
 ```
 
-Your presentation is in the same folder as `bs-presentation.pdf`.
+Your presentation is in the same folder with name `bs-presentation.pdf`.
