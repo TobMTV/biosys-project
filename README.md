@@ -61,3 +61,5 @@ git clone "https://github.com/casalinovalerio/biosys-project.git" \
 ```
 
 Your presentation is in the same folder with name `bs-presentation.pdf`.
+
+Or just click here: [https://git.io/JvGRm](https://git.io/JvGRm)
