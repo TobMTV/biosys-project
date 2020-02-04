@@ -75,4 +75,3 @@ plt.grid(linestyle='--', linewidth=0.5, alpha=0.15)
 plt.title("FAR (green) & FRR (red)\nGraphic representation of the system with threshold step of 0.001")
 
 plt.show()
-

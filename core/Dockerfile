@@ -1,6 +1,6 @@
 FROM python:3.4-slim
 
-RUN apt-get -y update && \
+RUN apt-get -y --no-install-recommends update && \
     apt-get install -y --fix-missing \
     build-essential \
     cmake \

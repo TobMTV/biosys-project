@@ -96,8 +96,8 @@ def web_recognize():
     if file and is_picture(file.filename):
         # The image file seems valid! Detect faces and return the result.
         return jsonify(detect_faces_in_image(file))
-    else:
-        raise BadRequest("Given file is invalid!")
+    
+    raise BadRequest("Given file is invalid!")
 
 
 @app.route('/faces', methods=['GET', 'POST', 'DELETE'])
@@ -144,4 +144,4 @@ if __name__ == "__main__":
 
     # Start app
     print("Starting WebServer...")
-    app.run(host='0.0.0.0', port=8080, debug=False)
+    app.run(host='192.168.0.1', port=8080, debug=False)

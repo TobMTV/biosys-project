@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 
-import csv, sys
+import csv
 import matplotlib.pyplot as plt
 
 # Registered users in gallery
@@ -84,4 +84,3 @@ plt.grid(linestyle='--', linewidth=0.5, alpha=0.15)
 plt.title("FAR (green) & FRR (red)\nGraphic representation of the system with threshold step of 0.001")
 
 plt.show()
-
