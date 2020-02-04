@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+# args:
+#     1: path to lfw-file
+#     2: server url
+#     3: csv file
+
+command -v jq > /dev/null || { printf "Install jq please"; exit 1; }
+
+printf "Distance,Id,Image,Real name\\n" > "$3"
+while read -r line; do
+  img=$( printf "%s" "$line" | cut -d " " -f 2 )
+  real=$( printf "%s" "$line" | cut -d " " -f 1 )
+  response=$( curl -s -X POST -F "file=@$img" "$2" )
+  count=$( printf "%s" "$response" | jq '.count' )
+  if [ $count -eq 1 ]; then
+    dist=$( printf "%s" "$response" | jq '.faces[0].dist' )
+    id=$( printf "%s" "$response" | jq '.faces[0].id' )
+    image=$( printf "%s" "$img" | rev | cut -d "/" -f 1 | rev )
+    printf "%s,%s,%s,%s\\n" "$dist" "$id" "$image" "$real" >> "$3"
+  fi
+done < "$1"

@@ -12,3 +12,6 @@
 
 # Ignore "gitignore" folders
 **/gitignore/*
+
+# Python cache
+**/__pycache__

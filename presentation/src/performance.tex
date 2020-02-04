@@ -86,7 +86,7 @@
 
 \end{frame}
 
-\begin{frame} \frametitle{Results (raw)}
+\begin{frame} \frametitle{Home-made gallery results (raw)}
 	
 	\begin{center}
 		We let the script run and the results can be seen in this spreadsheet:
@@ -99,7 +99,7 @@
 
 \end{frame}
 
-\begin{frame} \frametitle{Results (Description)}
+\begin{frame} \frametitle{Home-made gallery Results (Description)}
 
 	We analyzed the results with a python script\footnote{{\color{red} 
 	\url{https://git.io/Jvsp6}}}, and obtained these FAR and FRR:
@@ -114,17 +114,36 @@
 
 \end{frame}
 
-\begin{frame} \frametitle{Results (Description)}
+\begin{frame} \frametitle{LFW Results (raw)}
 
 	\vfill
-	We surely had more to test, because seems too god to be true...
-	\vfill
-	That's why, instead of use our home-made data set, we used the
-	Labeled Faces in the Wild\footnote{{\color{red} 
-	\url{http://vis-www.cs.umass.edu/lfw/}}}.
-	\vfill
-	This time, 
+	We surely had more to test... That's why, instead of use our home-made 
+	data set, we used the \textbf{Labeled Faces in the Wild}\footnote{
+	{\color{red} \url{http://vis-www.cs.umass.edu/lfw/}}}. This time, 
+	we used 75 registered users and 150 impostors, getting these results:
 	
+	\begin{center}
+		\begin{figure}[H]
+			\includegraphics[width=.3\textwidth]{img/sheets}
+		\end{figure}
+		{\color{red} \url{https://tinyurl.com/skdethl}}	
+	\end{center}
+	\vfill
+
+\end{frame}
+
+\begin{frame} \frametitle{LFW gallery Results (Description)}
+
+	We analyzed the results with a similar version of the precedent 
+	python script\footnote{{\color{red} \url{https://git.io/Jvsp6}}}, 
+	and obtained these FAR and FRR:
 	
+	\vfill
+	\begin{center}
+		\begin{figure}[H]
+			\includegraphics[width=.7\textwidth]{img/far-frr-lfw}
+		\end{figure}
+	\end{center}
+	\vfill
 
 \end{frame}
